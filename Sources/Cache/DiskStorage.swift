@@ -157,9 +157,9 @@ public enum DiskStorage {
             let now = Date()
             let attributes: [FileAttributeKey : Any] = [
                 // The last access date.
-                .creationDate: now.fileAttributeDate,
+                FileAttributeKey.creationDate: now.fileAttributeDate,
                 // The estimated expiration date.
-                .modificationDate: expiration.estimatedExpirationSinceNow.fileAttributeDate
+                FileAttributeKey.modificationDate: expiration.estimatedExpirationSinceNow.fileAttributeDate
             ]
             do {
                 try config.fileManager.setAttributes(attributes, ofItemAtPath: fileURL.path)
